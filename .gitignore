@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore sensitive files
-*database.yml
+config/database.yml
