@@ -7,8 +7,8 @@ gem 'rails', '3.2.2'
 
 #gem 'sqlite3'
 #gem 'activerecord-postgresql-adapter'
-gem 'pg'
 gem 'json'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,6 +20,17 @@ group :assets do
    gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test do
+	gem 'capybara'
+	gem 'rspec-rails'
+	gem 'rb-inotify'
+	gem 'libnotify'
+end
+group :development do
+	gem 'rspec-rails'
+	gem 'guard-rspec'
 end
 
 gem 'jquery-rails'
