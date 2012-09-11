@@ -16,4 +16,5 @@ rerun.txt
 pickle-email-*.html
 /vendor/cache
 config/database.yml
+config/config.yml
 *.htpasswd
