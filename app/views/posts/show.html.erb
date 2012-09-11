@@ -12,8 +12,6 @@
 
 <h2>Comments</h2>
 <div id='comments'>
-<%= @post.comments.count %>
-<%= @comments.count %>
 <%= render @comments %>
 <%= will_paginate @comments, :class => "pagination", :param_name => 'comments_page' %>
 </div> 
