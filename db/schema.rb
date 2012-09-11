@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911062907) do
+ActiveRecord::Schema.define(:version => 20120911074708) do
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.boolean  "visible"
+    t.string   "author_IP"
+    t.string   "username"
+    t.integer  "parent_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["parent_id"], :name => "index_comments_on_parent_id"
 
   create_table "posts", :force => true do |t|
     t.text     "content"

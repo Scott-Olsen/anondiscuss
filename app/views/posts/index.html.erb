@@ -1,11 +1,9 @@
 <h1>Listing posts</h1>
-
+<%= will_paginate @posts %>
 <table>
   <tr>
     <th>Content</th>
-    <th>Visible</th>
-    <th>Author ip</th>
-    <th>Username</th>
+    <th>Created at</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,16 +12,15 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
-    <td><%= post.visible %></td>
-    <td><%= post.author_IP %></td>
-    <td><%= post.username %></td>
+    <td><%= post.created_at %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+<br />
+<%= will_paginate @posts %>
 <br />
 
 <%= link_to 'New Post', new_post_path %>

@@ -6,20 +6,17 @@
 </p>
 
 <p>
-  <b>Visible:</b>
-  <%= @post.visible %>
-</p>
-
-<p>
-  <b>Author ip:</b>
-  <%= @post.author_IP %>
-</p>
-
-<p>
   <b>Username:</b>
   <%= @post.username %>
 </p>
 
-
+<h2>Comments</h2>
+<% @post.comments.each do |comment| %>
+  <p>
+    <b>Comment:</b>
+    <%= comment.content %>
+  </p>
+<% end %>
+ 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
