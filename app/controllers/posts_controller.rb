@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     #@posts = Post.all
     # Pagination, selecting which posts are visible
-    @posts = Post.where(:visible => true).paginate(:page => params[:page]).order('updated_at DESC')
+    @posts = Post.where(:visible => true).paginate(:page => params[:page], :per_page => 30).order('updated_at DESC')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments.where(:visible => true).paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # show.html.erb
