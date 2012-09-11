@@ -1,15 +1,16 @@
 <% provide(:title, 'Post #' + @post.id.to_s) %>
 <p id="notice"><%= notice %></p>
 
+<div class="post">
 <p>
-  <b>Content:</b>
   <%= simple_format(@post.content) %>
 </p>
 
 <p>
-  <b>Username:</b>
-  <%= @post.username %>
+  <b>Created:</b>
+  <%= @post.created_at %>
 </p>
+</div>
 
 <h2>Comments</h2>
 <div id='comments'>

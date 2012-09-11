@@ -1,4 +1,8 @@
-<p>
-  <b>Comment:</b>
-  <%= simple_format(comment.content) %>
-</p>
+<div class="comment">
+  <p>
+    <%= simple_format(comment.content) %>
+  </p>
+  <p>
+    <b>Created: </b><%= comment.created_at %>
+  </p>
+</div>

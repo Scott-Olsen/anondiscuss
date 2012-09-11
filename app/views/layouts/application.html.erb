@@ -9,7 +9,7 @@
 <body>
 <!-- Header TODO: should not be here? -->
 <div id="header">
-<h1><%= APP_CONFIG[:site_title] %></h1>
+<h1><%= link_to APP_CONFIG[:site_title], :controller => "posts" %></h1>
 </div>
 <%= yield %>
 
