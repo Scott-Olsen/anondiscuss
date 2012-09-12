@@ -1,5 +1,3 @@
-= ajax_links :section_id => "all_posts" do
-  = will_paginate @posts
 #all_posts
   = ajax_loadzone do
     = @posts.each do |post|
