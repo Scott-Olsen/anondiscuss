@@ -1,0 +1,44 @@
+body {
+  margin: 0px 20px;
+  padding: 0;
+  color: #8D8D82;
+  background-color: #1b1b1b;
+  font-family: $verdana;
+  font-size: 10px;
+}
+
+a {
+  color: #AAA;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#header {
+  background-color: #555;
+  padding: 15px 100px;
+  @include box-shadow(0 0 6px 3px #000);
+}
+#header h1 {
+  color: #8D8D82;
+  a {
+    text-decoration: none;
+    color: #8D8D82;
+  }
+}
+#all_posts {
+  padding: 10px;
+  background-color: #232320;
+}
+
+.post {
+  margin: 10px 0px;
+  padding: 4px 10px;
+  background-color: #2C2C29;
+  @include transition(all 500ms ease-in-out);
+  @include box-shadow(0 5px 6px 4px #000);
+
+  &:hover { background-color: #333; }
+}

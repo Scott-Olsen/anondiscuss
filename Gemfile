@@ -53,3 +53,6 @@ gem 'jquery-rails'
 # Pagination
 gem 'will_paginate'
 gem 'ajax_pagination'
+
+# SCSS
+gem 'bourbon'
