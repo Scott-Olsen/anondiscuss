@@ -37,6 +37,8 @@ a {
   margin: 10px 0px;
   padding: 4px 10px;
   background-color: #2C2C29;
+  border-right:3px solid #3A3A35;
+  border-left:3px solid #3A3A35;
   @include transition(all 500ms ease-in-out);
   @include box-shadow(0 5px 6px 4px #000);
 

@@ -1,6 +1,6 @@
 Anondiscuss::Application.routes.draw do
   resources :posts do
-    resources :comments
+    resources :comments, :only => [:create, :destroy]
   end
 
   root :to => "posts#index"
