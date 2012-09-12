@@ -1,0 +1,30 @@
+<%= ajax_links :section_id => "all_posts" do %>
+  <%= will_paginate @posts %>
+<% end %>
+<div id="all_posts">
+<table>
+  <tr>
+    <th>Content</th>
+    <th>Created at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<%= ajax_loadzone do %>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= simple_format(post.content) %></td>
+      <td><%= post.created_at %></td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+<% end %>
+</table>
+</div>
+<br />
+<%= ajax_links :section_id => "all_posts" do %>
+  <%= will_paginate @posts %>
+<% end %>
+

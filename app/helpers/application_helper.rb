@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_title(page_title)
-    base_title = "Anondiscuss" #TODO: Base title should be configurable from elsewhere
+    base_title = APP_CONFIG[:site_title] #TODO: Base title should be configurable from elsewhere
     if page_title.empty?
       base_title
     else
