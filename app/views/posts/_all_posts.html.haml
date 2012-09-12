@@ -1,6 +1,6 @@
 #all_posts
   = ajax_loadzone do
-    = @posts.each do |post|
+    - @posts.each do |post|
       .post
         %p= simple_format(post.content)
         %p= post.created_at.strftime("%l:%M %P %b %e %Y")
@@ -8,6 +8,6 @@
         .admin_controls
           = link_to 'Edit', edit_post_path(post)
           = link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete
-%br
+%br/
 = ajax_links :section_id => "all_posts" do
   = will_paginate @posts
