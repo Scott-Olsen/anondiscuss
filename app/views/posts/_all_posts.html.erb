@@ -14,8 +14,8 @@
   <% @posts.each do |post| %>
     <tr>
       <td><%= simple_format(post.content) %></td>
-      <td><%= post.created_at %></td>
-      <td><%= link_to "View and Add Comments (#{post.comments.count})", post %></td>
+      <td><%= post.created_at.strftime("%l:%M %P %b %e %Y") %></td>
+      <td><%= link_to "#{post.comments.count} comments", post %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
     </tr>

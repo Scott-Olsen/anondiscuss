@@ -3,6 +3,6 @@
     <%= simple_format(comment.content) %>
   </p>
   <p>
-    <b>Created: </b><%= comment.created_at %>
+    <b>Created: </b><%= comment.created_at.strftime("%l:%M %P %b %e %Y") %>
   </p>
 </div>
