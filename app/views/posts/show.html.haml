@@ -3,7 +3,7 @@
 .post
   %p= simple_format(@post.content)
   %p
-    Created: 
+    Created:
     = @post.created_at.strftime("%l:%M %P %b %e %Y")
   %p
     = link_to 'Edit', edit_post_path(@post)
