@@ -5,7 +5,7 @@ Anondiscuss::Application.routes.draw do
 
   root :to => "posts#index"
 
-  match '/help',	to: 'static_pages#help'
-  match '/about',	to: 'static_pages#about'
+  match '/help',    to: 'static_pages#help'
+  match '/about',   to: 'static_pages#about'
 
 end

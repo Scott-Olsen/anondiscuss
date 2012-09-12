@@ -7,7 +7,7 @@ module ApplicationHelper
     else
       "#{page_title} | #{base_title}"
     end
-  end 
+  end
   def page_url()
     return #{request.protocol}#{request.host_with_port}#{request.fullpath};
   end
