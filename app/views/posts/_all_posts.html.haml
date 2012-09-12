@@ -2,7 +2,7 @@
   = will_paginate @posts
 #all_posts
   = ajax_loadzone do
-    = @posts.each do |post| 
+    = @posts.each do |post|
       .post
         %p= simple_format(post.content)
         %p= post.created_at.strftime("%l:%M %P %b %e %Y")
