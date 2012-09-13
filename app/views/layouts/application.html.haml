@@ -10,6 +10,8 @@
 / Header TODO: should not be here?
 #header
   %h1= link_to APP_CONFIG[:site_title], :controller => "posts"
+  #site_logo
+    /= image_tag "logo.png"
 #page-container
   = yield
 = render :partial => 'layouts/footer'
