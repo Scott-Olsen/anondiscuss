@@ -1,4 +1,8 @@
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   margin: 0px 40px;
   padding: 0;
   color: #8D8D82;
@@ -51,9 +55,11 @@ a {
 
 #page-container {
   padding-top: 50px;
+  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
   width: 920px;
+  min-height: 100%;
   margin: 0 auto;
   background-color: #232320;
   @include clearfix;
