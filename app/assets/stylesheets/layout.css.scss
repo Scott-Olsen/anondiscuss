@@ -1,5 +1,5 @@
 body {
-  margin: 0px 20px;
+  margin: 0px 40px;
   padding: 0;
   color: #8D8D82;
   background-color: #1b1b1b;
@@ -26,7 +26,7 @@ a {
 }
 #header h1 {
   color: #8D8D82;
-  margin: 3px 10px;
+  margin: 3px 40px;
   a {
     text-decoration: none;
     color: #8D8D82;
@@ -42,20 +42,40 @@ a {
   margin-bottom: 2px;
   margin-top: 4px;
   margin-left: -15px;
-  @include background-image(url("logo-smcross.png"));
+  @include background-image(url("logo-sm-gray-red.png"));
+  background-position: 0 0;
   &:hover {
-    @include background-image(url("logo-redcross.png"))};
+    background-position: 0 -34px;
+  }
 }
 
 #page-container {
-  padding-top: 40px;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 920px;
+  margin: 0 auto;
+  background-color: #232320;
+  @include clearfix;
 }
+
+#content-main {
+  float: left;
+  width: 600px;
+}
+
+#dashboard {
+  float: right;
+  width: 300px;
+  border: 2px solid black;
+}
+
 #all_posts {
   background-color: #232320;
 }
 
 .post {
-  margin: 10px 0px;
+  margin-bottom: 11px;
   padding: 4px 10px;
   background-color: #2C2C29;
   border-right:3px solid #3A3A35;
