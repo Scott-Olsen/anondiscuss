@@ -56,3 +56,5 @@ gem 'ajax_pagination'
 
 # SCSS
 gem 'bourbon'
+
+gem 'haml'
