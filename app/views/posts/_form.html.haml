@@ -1,0 +1,24 @@
+.row.form
+  = form_for @post, :remote => true do |f|
+    - if @post.errors.any
+      #error_explanation
+        %h2
+          = pluralize(@post.errors.count, "error")
+          prohibited this post from being saved:
+        %ul
+          - @post.errors.full_messages.each do |msg|
+            %li= msg
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :visible
+    = f.check_box :visible
+  .field
+    = f.label :author_IP
+    = f.text_field :author_IP
+  .field
+    = f.label :username
+    = f.text_field :username
+  .actions
+    = f.submit
