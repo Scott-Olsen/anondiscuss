@@ -1,0 +1,11 @@
+#page-container {
+  @include outer-container;
+}
+
+#content-main {
+  @include span-columns(8);
+}
+
+#dashboard {
+  @include span-columns(4);
+}
