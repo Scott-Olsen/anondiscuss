@@ -93,11 +93,16 @@ a {
   @include border-radius(5px);
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #333330;
+  background-color: #333;
 }
 
 .box-content {
   margin: 0 auto;
+}
+
+.dashboard-box#about-box {
+  min-height: 200px;
+  background: #333330 url("new-ega-01graysfinal.gif") center no-repeat;
 }
 
 #all_posts {
