@@ -8,5 +8,5 @@
 .dashboard-box#about-box
   %h2 About, links
   = link_to "About", about_path
-  - if @user.is?(:admin)
+  - if current_user.is?(:admin)
     You are logged in as admin
