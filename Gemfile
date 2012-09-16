@@ -59,3 +59,5 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'haml'
+gem 'devise'
+gem 'cancan'

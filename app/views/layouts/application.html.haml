@@ -9,10 +9,11 @@
 %body
 / Header TODO: should not be here?
 #header
-  %h1= link_to APP_CONFIG[:site_title], :controller => "posts"
+  %h1= link_to APP_CONFIG[:site_title], root_path
   #site_logo
     /= image_tag "logo.png"
 #page-container
-  = yield
+  #content-main
+    = yield
   #dashboard
     = render :partial => 'shared/dashboard'

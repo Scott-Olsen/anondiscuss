@@ -1,5 +1,4 @@
-#content-main
-  #content-header
-  = ajax_section :id => "all_posts", :render => "all_posts"
-  %br
-  = link_to 'New Post', new_post_path
+#content-header
+= ajax_section :id => "all_posts", :render => "all_posts"
+%br
+= link_to 'New Post', new_post_path
