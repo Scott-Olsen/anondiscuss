@@ -9,15 +9,6 @@
   .dashboard-box#recent-invisible-posts
     - @recent_invisible_posts.each do |post|
       .post
-        %p= truncate(post.content, :length => 100)
-        %small= post.id
-        %small= time_ago_in_words(post.updated_at)
-        - if can? :update, @post
-          .admin_controls
-            %ul
-              %li= link_to 'Edit', edit_post_path(post)
-              %li= link_to 'Toggle Visibility', softdelete_post_path(:id => post.id), method: :put
-              %li= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete
 .dashboard-box#donate
   .box-content
     = render :partial => 'shared/wepay'

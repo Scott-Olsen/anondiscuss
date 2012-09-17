@@ -6,7 +6,11 @@ class PostsController < ApplicationController
     #@posts = Post.all
     # Pagination, selecting which posts are visible
     @posts = Post.where(:visible => true).paginate(:page => params[:page], :per_page => 30 ).order('updated_at DESC')
+<<<<<<< HEAD
     @recent_invisible_posts = Post.recent_update.where(:visible => false)
+=======
+    @post = Post.new
+>>>>>>> form
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -32,7 +36,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.html
+      format.html { render action: "new", :locals => { :post => @post }}
       format.json { render json: @post }
     end
   end
@@ -51,6 +55,7 @@ class PostsController < ApplicationController
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -78,11 +83,11 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def softdelete
     @post = Post.find(params[:id])
-    #@post.togglevisibility!
-    @post.toggle(:visible)
+    @post.toggle!(:visible)
     respond_to do |format|
       if @post.update_record_without_timestamping
         format.html { redirect_to :back, notice: 'Post invisible' }
+        format.js
       else
         format.html { redirect_to :back, alert: 'Failed making post invisible'}
       end
@@ -98,6 +103,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+      format.js
     end
   end
 end
