@@ -1,12 +1,23 @@
 .dashboard-box
   %h2 Form
-.dashboard-box#social-media
-  = render :partial => 'shared/social-media'
+  %p.notice
+    = notice
+  %p.alert
+    = alert
 .dashboard-box#donate
   .box-content
     = render :partial => 'shared/wepay'
 .dashboard-box#about-box
-  %h2 About, links
+  - if can? :edit, Post
+    edit post
+  - if user_signed_in?
+    %li
+      = link_to('Logout', destroy_user_session_path, :method=>'delete')
+    %li
+      = link_to('Edit account', edit_user_registration_path)
+  - else
+    %li
+      = link_to('Login', new_user_session_path)
+    %li
+      = link_to('Sign up', new_user_registration_path)
   = link_to "About", about_path
-  - if current_user.is?(:admin)
-    You are logged in as admin
