@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource :only => [:edit, :update, :destroy]
+  load_and_authorize_resource :only => [:edit, :update, :destroy, :softdelete]
   # GET /posts
   # GET /posts.json
   def index
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @post = Post.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @post }
     end
   end
