@@ -3,6 +3,9 @@ Anondiscuss::Application.routes.draw do
 
   resources :posts do
     resources :comments, :only => [:create, :destroy]
+    member do
+      put :softdelete
+    end
   end
 
   root :to => "posts#index"
