@@ -8,8 +8,6 @@
   .box-content
     = render :partial => 'shared/wepay'
 .dashboard-box#about-box
-  - if can? :edit, Post
-    edit post
   - if user_signed_in?
     %li
       = link_to('Logout', destroy_user_session_path, :method=>'delete')
