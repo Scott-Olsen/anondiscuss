@@ -79,7 +79,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.toggle!(:visible)
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post invisible' }
+      format.html { redirect_to :back, notice: 'Post invisible' }
     end
   end
 
