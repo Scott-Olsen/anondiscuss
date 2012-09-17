@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     #@posts = Post.all
     # Pagination, selecting which posts are visible
     @posts = Post.where(:visible => true).paginate(:page => params[:page], :per_page => 30 ).order('updated_at DESC')
+    @recent_invisible_posts = Post.recent_update.where(:visible => false)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
