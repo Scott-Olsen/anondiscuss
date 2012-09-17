@@ -3,8 +3,10 @@
     - @posts.each do |post|
       .post
         %p= simple_format(post.content)
-        %p= post.created_at.strftime("%l:%M %P %b %e %Y")
-        %p= link_to "#{post.comments.count} comments", post
+        .box-footer
+          %small= post.created_at.strftime("%l:%M %P %b %e %Y")
+          ·
+          %small= link_to "#{post.comments.count} comments", post
         - if can? :update, @post
           .admin_controls
             %ul
