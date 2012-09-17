@@ -1,16 +1,7 @@
-#all_posts
-  = ajax_loadzone do
+= ajax_loadzone do
+  #all_posts
     - @posts.each do |post|
-      .post
-        %p= simple_format(post.content)
-        %p= post.created_at.strftime("%l:%M %P %b %e %Y")
-        %p= link_to "#{post.comments.count} comments", post
-        - if can? :update, @post
-          .admin_controls
-            %ul
-              %li= link_to 'Edit', edit_post_path(post)
-              %li= link_to 'Toggle Visibility', softdelete_post_path(:id => post.id), method: :put
-              %li= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete
+      = render post
 %br/
 = ajax_links :section_id => "all_posts" do
   = will_paginate @posts
