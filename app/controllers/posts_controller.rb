@@ -72,6 +72,16 @@ class PostsController < ApplicationController
     end
   end
 
+  # PUT /posts/1
+  # PUT /posts/1.json
+  def softdelete
+    @post = Post.find(params[:id])
+    @post.toggle!(:visible)
+    respond_to do |format|
+      format.html { redirect_to posts_url, notice: 'Post invisible' }
+    end
+  end
+
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
