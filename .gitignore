@@ -18,3 +18,4 @@ pickle-email-*.html
 config/database.yml
 config/config.yml
 *.htpasswd
+public/assets
