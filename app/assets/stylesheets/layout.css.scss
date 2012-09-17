@@ -72,6 +72,16 @@ a {
   @include breakpoint($mobile) {
     @include span-columns(3);
   }
+  .post {
+    margin-bottom: 11px;
+    padding: 4px 10px;
+    background-color: #2C2C29;
+    border-right:3px solid #3A3A35;
+    border-left:3px solid #3A3A35;
+    @include transition(all 500ms $ease-out-back);
+    @include box-shadow(0 5px 6px 4px #000);
+    &:hover { background-color: #333; }
+  }
 }
 
 #dashboard {
@@ -94,6 +104,12 @@ a {
   margin-bottom: 10px;
   padding: 10px;
   background-color: #333;
+  .post {
+    border: 1px solid #232320;
+    background-color: #2C2C29;
+    padding: 4px;
+    margin-bottom: 5px;
+  }
 }
 
 .box-content {
@@ -105,20 +121,9 @@ a {
   background: #333330 url("new-ega-01graysfinal.gif") center no-repeat;
 }
 
+
 #all_posts {
   background-color: #232320;
-}
-
-.post {
-  margin-bottom: 11px;
-  padding: 4px 10px;
-  background-color: #2C2C29;
-  border-right:3px solid #3A3A35;
-  border-left:3px solid #3A3A35;
-  @include transition(all 500ms $ease-out-back);
-  @include box-shadow(0 5px 6px 4px #000);
-
-  &:hover { background-color: #333; }
 }
 
 /* We pay */

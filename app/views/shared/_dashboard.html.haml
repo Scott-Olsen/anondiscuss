@@ -5,11 +5,13 @@
   %p.alert
     = alert
 - if current_user.try(:is_admin?)
+  / TODO: Toggle to hide and something else
   .dashboard-box#recent-invisible-posts
     - @recent_invisible_posts.each do |post|
       .post
         %p= truncate(post.content, :length => 100)
-        %p= time_ago_in_words(post.updated_at)
+        %small= post.id
+        %small= time_ago_in_words(post.updated_at)
         - if can? :update, @post
           .admin_controls
             %ul

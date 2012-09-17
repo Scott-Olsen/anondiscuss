@@ -78,9 +78,14 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def softdelete
     @post = Post.find(params[:id])
-    @post.toggle!(:visible)
+    #@post.togglevisibility!
+    @post.toggle(:visible)
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Post invisible' }
+      if @post.update_record_without_timestamping
+        format.html { redirect_to :back, notice: 'Post invisible' }
+      else
+        format.html { redirect_to :back, alert: 'Failed making post invisible'}
+      end
     end
   end
 
