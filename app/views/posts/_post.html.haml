@@ -1,10 +1,11 @@
 = div_for(post) do
   %p= simple_format(post.content)
-  %p= post.created_at.strftime("%l:%M %P %b %e %Y")
-  %p= link_to "#{post.comments.count} comments", post
-  - if can? :update, @post
-    .admin_controls
-      %ul
-        %li= link_to 'Edit', edit_post_path(post)
-        %li= link_to 'Toggle Visibility', softdelete_post_path(:id => post.id), :method => :put, :remote => true
-        %li= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete
+  .post-footer
+    %small= post.created_at.strftime("%l:%M %P %b %e %Y")
+    %small= link_to "#{post.comments.count} comments", post
+    - if can? :update, @post
+      .admin_controls
+        %ul
+          %li= link_to 'Edit', edit_post_path(post)
+          %li= link_to 'Toggle Visibility', softdelete_post_path(:id => post.id), :method => :put, :remote => true
+          %li= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete

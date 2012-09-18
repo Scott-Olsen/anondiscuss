@@ -8,7 +8,7 @@
   / TODO: Toggle to hide and something else
   .dashboard-box#recent-invisible-posts
     - @recent_invisible_posts.each do |post|
-      .post
+      = render post
 .dashboard-box#donate
   .box-content
     = render :partial => 'shared/wepay'
