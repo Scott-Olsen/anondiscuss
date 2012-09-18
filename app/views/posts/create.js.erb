@@ -1,2 +1,2 @@
 $('#all_posts').prepend('<%= escape_javascript(render(@post)) %>');
-$('#new-post-form > form')[0].reset();
+$('#new-post-form').remove();
