@@ -1,6 +1,28 @@
 = provide(:title, 'Post #' + @post.id.to_s)
 #content-main
   = render @post
-#comments
-  = render @comments.reverse
+  #comments
+    = render @comments
   = will_paginate @comments, :class => "pagination", :param_name => 'comments_page'
+#dashboard
+  .dashboard-box#form-box
+    %p.notice
+      = notice
+    %p.alert
+      = alert
+    = link_to 'Reply to this post', new_post_comment_path(@post.id), :remote => true
+  .dashboard-box#donate
+    .box-content
+      = render :partial => 'shared/wepay'
+  .dashboard-box#about-box
+    - if user_signed_in?
+      %li
+        = link_to('Logout', destroy_user_session_path, :method=>'delete')
+      %li
+        = link_to('Edit account', edit_user_registration_path)
+    - else
+      %li
+        = link_to('Login', new_user_session_path)
+      %li
+        = link_to('Sign up', new_user_registration_path)
+    = link_to "About", about_path

@@ -2,7 +2,7 @@ Anondiscuss::Application.routes.draw do
   devise_for :users
 
   resources :posts do
-    resources :comments, :only => [:create, :destroy]
+    resources :comments, :only => [:create, :destroy, :new]
     member do
       put :softdelete
     end

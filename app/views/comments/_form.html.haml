@@ -1,0 +1,14 @@
+#new-post-form
+  = form_for [@post, @post.comments.build], :remote => true do |f|
+    - if @post.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(post.errors.count, "error")
+          prohibited this post from being saved:
+        %ul
+          - post.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.text_area :content, :rows => 4, :cols => nil, :placeholder => 'Reply to this post...'
+    .actions
+      = f.submit
