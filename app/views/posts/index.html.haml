@@ -1,2 +1,5 @@
-#content-header
-= ajax_section :id => "all_posts", :render => "all_posts"
+#content-main
+  #content-header
+   = ajax_section :id => "all_posts", :render => "all_posts"
+  #dashboard
+    = render :partial => 'shared/dashboard'
