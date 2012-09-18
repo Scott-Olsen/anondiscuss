@@ -35,6 +35,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { render action: "new", :locals => { :post => @post }}
       format.json { render json: @post }
+      format.js
     end
   end
 

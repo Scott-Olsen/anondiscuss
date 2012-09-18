@@ -9,8 +9,7 @@
           - post.errors.full_messages.each do |msg|
             %li= msg
     .field
-      = f.label :content
-      = f.text_area :content
+      = f.text_area :content, :rows => 4, :cols => nil, :placeholder => 'Tell us why you hate the Marine Corps'
       = f.hidden_field :visible, :value => 1 
     .actions
       = f.submit

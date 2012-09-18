@@ -1,9 +1,9 @@
-.dashboard-box
-  %h2 Form
+.dashboard-box#form-box
   %p.notice
     = notice
   %p.alert
     = alert
+  = link_to 'New Post', new_post_path, :remote => true
 /- if current_user.try(:is_admin?)
 / TODO: Toggle to hide and something else
 /  .dashboard-box#recent-invisible-posts

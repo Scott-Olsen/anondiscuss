@@ -1,15 +1,15 @@
 = provide(:title, 'Post #' + @post.id.to_s)
-%p#notice= notice
-.post
-  %p= simple_format(@post.content)
-  %p
-    Created:
-    = @post.created_at.strftime("%l:%M %P %b %e %Y")
-  %p
-    = link_to 'Edit', edit_post_path(@post)
-    | 
-    = link_to 'Back', posts_path
-%h2 Comments
+= render @post
+/.post
+/  %p= simple_format(@post.content)
+/  %p
+/    Created:
+/    = @post.created_at.strftime("%l:%M %P %b %e %Y")
+/  %p
+/    = link_to 'Edit', edit_post_path(@post)
+/    | 
+/    = link_to 'Back', posts_path
+/%h2 Comments
 #comments
   = render @comments.reverse
   = will_paginate @comments, :class => "pagination", :param_name => 'comments_page'
