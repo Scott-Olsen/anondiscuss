@@ -2,4 +2,14 @@
   #content-header
     = ajax_section :id => "all_posts", :render => "all_posts"
 #dashboard
-  = render :partial => 'shared/dashboard'
+  .dashboard-box#form-box
+    %p.notice
+      = notice
+    %p.alert
+      = alert
+    = link_to 'New Post', new_post_path, :remote => true
+  .dashboard-box#donate
+    .box-content
+      = render :partial => 'shared/wepay'
+  .dashboard-box#about-box
+    = render :partial => 'shared/about-box'

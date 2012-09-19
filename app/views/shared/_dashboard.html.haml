@@ -13,15 +13,4 @@
   .box-content
     = render :partial => 'shared/wepay'
 .dashboard-box#about-box
-  - if user_signed_in?
-    %li
-      = link_to('Logout', destroy_user_session_path, :method=>'delete')
-    %li
-      = link_to('Edit account', edit_user_registration_path)
-  - else
-    %li
-      = link_to('Login', new_user_session_path)
-    %li
-      = link_to('Sign up', new_user_registration_path)
-  = link_to "About", about_path
-  = link_to "Anondiscuss", 'https://github.com/solsen230/anondiscuss'
+  = render :partial => 'shared/about-box'

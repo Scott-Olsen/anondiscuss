@@ -124,6 +124,9 @@ ul ol {
 .dashboard-box#about-box {
   min-height: 200px;
   background: #333330 url("new-ega-01graysfinal.gif") center no-repeat;
+  .box-content {
+    height: 160px;
+  }
 }
 
 .dashboard-box#form-box{
