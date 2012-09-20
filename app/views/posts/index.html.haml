@@ -1,15 +1,16 @@
 #content-main
   #content-header
-    = ajax_section :id => "all_posts", :render => "all_posts"
+  = ajax_section :id => "all_posts", :render => "all_posts"
 #dashboard
-  .dashboard-box#form-box
+  .dashboard-box
     %p.notice
       = notice
     %p.alert
       = alert
-    = link_to 'New Post', new_post_path, :remote => true
-  .dashboard-box#donate
-    .box-content
-      = render :partial => 'shared/wepay'
+    .box-content#form-box
+      = button_to 'New Post', new_post_path, :remote => true, :method => :get
+  .dashboard-box
+    .box-content#donate
+      = button_to "Donate", donate_path, :remote => true
   .dashboard-box#about-box
     = render :partial => 'shared/about-box'

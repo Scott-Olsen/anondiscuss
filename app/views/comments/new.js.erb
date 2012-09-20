@@ -1,2 +1,3 @@
-$('#form-box').prepend('<%= escape_javascript(render('form')) %>');
+var divClone = $("#form-box").clone();
+$('#form-box').html('<%= escape_javascript(render('form')) %>');
 $('#new-post-form > form')[0].reset();

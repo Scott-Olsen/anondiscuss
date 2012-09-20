@@ -1,18 +1,20 @@
 = provide(:title, 'Post #' + @post.id.to_s)
 #content-main
+  #content-header
   = render @post
   #comments
     = render @comments
   = will_paginate @comments, :class => "pagination", :param_name => 'comments_page'
 #dashboard
-  .dashboard-box#form-box
+  .dashboard-box
     %p.notice
       = notice
     %p.alert
       = alert
-    = link_to 'Reply to this post', new_post_comment_path(@post.id), :remote => true
-  .dashboard-box#donate
-    .box-content
-      = render :partial => 'shared/wepay'
+    .box-content#form-box
+      = button_to 'Reply to this post', new_post_comment_path(@post.id), :remote => true, :method => :get
+  .dashboard-box
+    .box-content#donate
+      = button_to "Donate", donate_path, :remote => true 
   .dashboard-box#about-box
     = render :partial => 'shared/about-box'

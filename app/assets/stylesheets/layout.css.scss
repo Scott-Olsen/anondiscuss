@@ -30,6 +30,14 @@ ul ol {
   margin: 0;
 }
 
+button {
+  @include button(shiny, #888);
+}
+
+input[type=submit] {
+  @include button(shiny, #888);
+ }
+
 #header {
   width: 100%;
   height: 35px;
@@ -111,7 +119,7 @@ ul ol {
   border: 1px solid #111;
   @include border-radius(5px);
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 4px 10px;
   background-color: #333;
   .post {
     border: 1px solid #232320;
@@ -123,17 +131,25 @@ ul ol {
 
 .dashboard-box#about-box {
   min-height: 200px;
-  background: #333330 url("new-ega-01graysfinal.gif") center no-repeat;
+  background: #333330;
+  @include background-image(url("new-ega-01graysfinal.gif"));
+  background-position: center;
+  background-repeat: no-repeat;
   .box-content {
     height: 160px;
   }
 }
 
-.dashboard-box#form-box{
+.box-content#form-box{
+  textarea {
+  resize: vertical;
+  width: 100%;
+  }
 }
 
 .box-content {
   margin: 0 auto;
+  padding: 10px 0;
 }
 
 .box-footer{

@@ -9,6 +9,7 @@
           - post.errors.full_messages.each do |msg|
             %li= msg
     .field
-      = f.text_area :content, :rows => 4, :cols => nil, :placeholder => 'Reply to this post...'
+      = f.text_area :content, :rows => 4, :cols => nil, :autofocus => true, :placeholder => 'Reply to this post...'
     .actions
-      = f.submit
+      = f.submit "Save Comment"
+      = button_tag "Cancel", :type => "reset", :id => 'cancel', :remote => true

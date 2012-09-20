@@ -1,0 +1,23 @@
+%a{:class=>"wepay-widget-button wepay-green", :id=>"wepay_widget_anchor_50526abdf1eb3", :href=>"https://www.wepay.com/donations/166820"}Support this site
+:javascript
+  var WePay = WePay || {};
+  WePay.load_widgets = WePay.load_widgets || function() { };
+  WePay.widgets = WePay.widgets || [];
+  WePay.widgets.push( {
+    object_id: 166820,
+    widget_type: "donation_campaign",
+    anchor_id: "wepay_widget_anchor_50526abdf1eb3",
+    widget_options: {
+      allow_cover_fee: true,
+      enable_recurring: true,
+      allow_anonymous: true,
+      button_text: "Support this site"
+    }
+  });
+  if (!WePay.script) {
+    WePay.script = document.createElement('script');WePay.script.type = 'text/javascript';WePay.script.async = true;
+    WePay.script.src = 'https://static.wepay.com/min/js/widgets.v2.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(WePay.script, s);
+  } else if (WePay.load_widgets) {
+    WePay.load_widgets();
+  }
